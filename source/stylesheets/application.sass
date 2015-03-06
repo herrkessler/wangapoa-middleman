@@ -1,0 +1,40 @@
+// ------------------------------------
+// Imports
+// ------------------------------------
+
+@import bourbon
+@import grid/grid-settings
+@import neat
+
+@import font-awesome
+@import url(http://fonts.googleapis.com/css?family=Vollkorn)
+
+@import settings/foundation
+@import settings/mixins
+@import settings/color
+@import settings/variables
+@import settings/animate
+
+@import specific/logo
+@import specific/index
+@import specific/navigation
+@import specific/footer
+
+
+// ------------------------------------
+// Preliminary Styles
+// ------------------------------------
+
+body
+  background: #333
+  color: white
+  position: relative
+  &.nav-active
+    overflow: hidden
+
+.container
+  +outer-container
+  padding: 0 $default-padding/2
+  &.hipster
+    +size(100%)
+    position: relative

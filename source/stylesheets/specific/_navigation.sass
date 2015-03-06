@@ -1,0 +1,66 @@
+#main-navigation-modal
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 0
+  background: rgba(black, 0.9)
+  z-index: -10
+  +transition(opacity .3s)
+  &.active
+    z-index: 10
+    opacity: 1
+
+
+.main-navigation-list
+  margin: $default-margin 0
+  max-width: 80%
+  +total-center
+
+.main-navigation-list-item
+  display: block
+  color: white
+  font-family: 'Vollkorn', serif
+  font-size: 2em
+  padding: $default-padding 0
+  text-align: center
+  min-width: 280px
+  &:not(:last-child)
+    border-bottom: 1px solid white
+
+#main-navigation-icon
+  position: relative
+  margin-top: $default-margin
+  +size(20px)
+  cursor: pointer
+  z-index: 20
+  span
+    display: block
+    background: white
+    height: 3px
+    margin-bottom: 4px
+    +transition(all .2s)
+  &.js-active
+    span
+      &:first-child
+        @include transform(translateY(7px) rotate(-45deg))
+      &:nth-child(2)
+        opacity: 0
+      &:last-child
+        @include transform(translateY(-7px) rotate(45deg))
+
+#tree, #anchor, #beer
+  position: absolute
+
+#tree
+  top: $default-margin
+  right: 0
+
+#anchor
+  bottom: $default-margin
+  left: 0
+
+#beer
+  bottom: $default-margin
+  right: 0
